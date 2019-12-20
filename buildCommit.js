@@ -39,7 +39,7 @@ const addBreaklinesIfNeeded = (value, breaklineChar = defaultBreaklineChar) =>
     .valueOf();
 
 const addFooter = (footer, config) => {
-  if (config && config.footerPrefix === '') return `\n\n${footer}`;
+  if (config && config.footerPrefix === '') return `\n\n${addBreaklinesIfNeeded(footer, config.breaklineChar)}`;
 
   const footerPrefix = config && config.footerPrefix ? config.footerPrefix : 'ISSUES CLOSED:';
 
